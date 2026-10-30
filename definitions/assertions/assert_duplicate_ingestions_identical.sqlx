@@ -1,0 +1,14 @@
+config {
+  type: "assertion",
+  description: "Issue: lines ingested twice. We keep the first copy, which is only safe while the copies are identical. Fails if a re-ingested line changed its amount, hours, type, status or department (that would be a correction, not a duplicate)."
+}
+
+SELECT
+  TRIM(payroll_line_id) AS payroll_line_id,
+  COUNT(*) AS copies
+FROM ${ref("payroll_lines")}
+GROUP BY 1
+HAVING COUNT(DISTINCT TO_JSON_STRING(STRUCT(
+  pay_run_id, employee_id, department_id, pay_date, earning_type, hours,
+  REPLACE(amount_usd, ',', '') AS amount_usd, line_status, voids_line_id
+))) > 1

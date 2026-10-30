@@ -1,0 +1,6 @@
+config {
+  type: "declaration",
+  schema: "payroll_raw",
+  name: "employer_contributions",
+  description: "Bronze: employer_contributions.csv as loaded from the payroll system. All columns are STRING."
+}

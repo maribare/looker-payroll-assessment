@@ -1,0 +1,9 @@
+config {
+  type: "assertion",
+  description: "Every employer contribution must belong to a pay run where the employee has valid earnings. Otherwise it would get no date or department and drop out of monthly totals."
+}
+
+SELECT pay_run_id, employee_id, contribution_type, amount_usd
+FROM ${ref("fct_employer_contributions")}
+WHERE pay_date IS NULL
+   OR department_id IS NULL

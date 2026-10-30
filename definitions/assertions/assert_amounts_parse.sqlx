@@ -1,0 +1,10 @@
+config {
+  type: "assertion",
+  description: "Issue: amounts with thousands separators. Fails if any amount is present in the source but still cannot be read as a number after cleaning (a new format such as '$1,234' or '1.234,56')."
+}
+
+SELECT payroll_line_id, amount_usd_raw
+FROM ${ref("stg_payroll_lines")}
+WHERE amount_usd_raw IS NOT NULL
+  AND TRIM(amount_usd_raw) != ''
+  AND amount_usd IS NULL

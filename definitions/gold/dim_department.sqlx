@@ -1,0 +1,17 @@
+config {
+  type: "table",
+  schema: "payroll_gold",
+  description: "One row per department with its division, cost center and manager.",
+  assertions: {
+    uniqueKey: ["department_id"],
+    nonNull: ["department_id", "department_name", "division"]
+  }
+}
+
+SELECT
+  TRIM(department_id)       AS department_id,
+  TRIM(department_name)     AS department_name,
+  TRIM(division)            AS division,
+  TRIM(cost_center)         AS cost_center,
+  TRIM(manager_employee_id) AS manager_employee_id
+FROM ${ref("departments")}

@@ -1,0 +1,41 @@
+config {
+  type: "table",
+  schema: "payroll_gold",
+  description: "One row per valid earning line: POSTED, not voided, not a duplicate, not a test account. Department is the cost center charged on the line.",
+  bigquery: {
+    partitionBy: "pay_date",
+    clusterBy: ["department_id", "earning_type"]
+  },
+  assertions: {
+    uniqueKey: ["payroll_line_id"],
+    nonNull: ["payroll_line_id", "pay_run_id", "employee_id", "department_id", "pay_date", "earning_type", "amount_usd"],
+    rowConditions: [
+      "amount_usd > 0",
+      "earning_type IN ('REGULAR', 'OVERTIME', 'PTO', 'BONUS')",
+      "NOT STARTS_WITH(UPPER(employee_id), 'TEST')"
+    ]
+  }
+}
+
+SELECT
+  payroll_line_id,
+  pay_run_id,
+  employee_id,
+  department_id,
+  pay_period_start,
+  pay_period_end,
+  pay_date,
+  DATE_TRUNC(pay_date, MONTH)                         AS pay_month,
+  ${fiscal.fiscalYearLabel("pay_date")}               AS fiscal_year,
+  ${fiscal.fiscalQuarterLabel("pay_date")}            AS fiscal_quarter,
+  ${fiscal.fiscalPeriod("pay_date")}                  AS fiscal_period,
+  earning_type,
+  hours,
+  amount_usd,
+  IF(earning_type = 'OVERTIME', amount_usd, 0)        AS overtime_amount_usd,
+  IF(earning_type = 'OVERTIME', hours, 0)             AS overtime_hours,
+  ingested_at
+FROM ${ref("stg_payroll_lines")}
+WHERE line_status = 'POSTED'
+  AND NOT is_voided
+  AND NOT is_test_account

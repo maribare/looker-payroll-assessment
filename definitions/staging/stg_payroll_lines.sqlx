@@ -1,0 +1,52 @@
+config {
+  type: "view",
+  schema: "payroll_staging",
+  description: "Payroll lines typed and de-duplicated, with flags for voided lines and test accounts. Nothing is filtered out here, so every exclusion stays traceable."
+}
+
+WITH typed AS (
+  SELECT
+    TRIM(payroll_line_id)                                  AS payroll_line_id,
+    TRIM(pay_run_id)                                       AS pay_run_id,
+    TRIM(employee_id)                                      AS employee_id,
+    NULLIF(TRIM(department_id), '')                        AS department_id,
+    SAFE_CAST(pay_period_start AS DATE)                    AS pay_period_start,
+    SAFE_CAST(pay_period_end AS DATE)                      AS pay_period_end,
+    SAFE_CAST(pay_date AS DATE)                            AS pay_date,
+    UPPER(TRIM(earning_type))                              AS earning_type,
+    SAFE_CAST(hours AS NUMERIC)                            AS hours,
+    -- Issue: some amounts arrive with a thousands separator ("2,163.20").
+    SAFE_CAST(REPLACE(TRIM(amount_usd), ',', '') AS NUMERIC) AS amount_usd,
+    amount_usd                                             AS amount_usd_raw,
+    UPPER(TRIM(line_status))                               AS line_status,
+    NULLIF(TRIM(voids_line_id), '')                        AS voids_line_id,
+    SAFE_CAST(_ingested_at AS TIMESTAMP)                   AS ingested_at
+  FROM ${ref("payroll_lines")}
+),
+
+deduplicated AS (
+  -- Issue: the same payroll_line_id is sometimes ingested twice (later _ingested_at).
+  -- Keep the first ingestion. An assertion checks that the copies are identical.
+  SELECT *
+  FROM typed
+  WHERE TRUE
+  QUALIFY ROW_NUMBER() OVER (PARTITION BY payroll_line_id ORDER BY ingested_at) = 1
+),
+
+voided AS (
+  -- Issue: a VOID line repeats the original amount as a POSITIVE number, in a later pay run.
+  -- The original it points to must be excluded too.
+  SELECT DISTINCT voids_line_id AS payroll_line_id
+  FROM deduplicated
+  WHERE line_status = 'VOID'
+)
+
+SELECT
+  d.*,
+  d.line_status = 'VOID'                        AS is_void_line,
+  v.payroll_line_id IS NOT NULL                 AS is_voided,
+  -- Issue: test accounts (TEST-001, TEST-002) are mixed with real employees.
+  STARTS_WITH(UPPER(d.employee_id), 'TEST')     AS is_test_account
+FROM deduplicated AS d
+LEFT JOIN voided AS v
+  ON v.payroll_line_id = d.payroll_line_id

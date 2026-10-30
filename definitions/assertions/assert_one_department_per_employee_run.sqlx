@@ -1,0 +1,9 @@
+config {
+  type: "assertion",
+  description: "Employer contributions have no department, so they take the department charged on the employee's lines in the same pay run. Fails if an employee is charged to two departments in one run (the contribution would then need to be split)."
+}
+
+SELECT pay_run_id, employee_id, COUNT(DISTINCT department_id) AS departments
+FROM ${ref("fct_payroll_lines")}
+GROUP BY 1, 2
+HAVING COUNT(DISTINCT department_id) > 1

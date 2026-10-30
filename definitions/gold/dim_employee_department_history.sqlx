@@ -1,0 +1,41 @@
+config {
+  type: "table",
+  schema: "payroll_gold",
+  description: "Type 2 history of each employee's department. Join with: date BETWEEN valid_from AND valid_to to get the department on any past date.",
+  assertions: {
+    uniqueKey: ["employee_id", "valid_from"],
+    nonNull: ["employee_id", "department_id", "valid_from", "valid_to"],
+    rowConditions: ["valid_to >= valid_from"]
+  }
+}
+
+WITH snapshots AS (
+  SELECT
+    employee_id,
+    department_id,
+    DATE(loaded_at) AS loaded_date,
+    LAG(department_id) OVER (PARTITION BY employee_id ORDER BY loaded_at) AS previous_department_id,
+    ROW_NUMBER()       OVER (PARTITION BY employee_id ORDER BY loaded_at) AS snapshot_number
+  FROM ${ref("stg_employees")}
+  WHERE NOT is_test_account
+),
+
+changes AS (
+  -- Keep the first snapshot and every snapshot where the department changed
+  SELECT employee_id, department_id, loaded_date, snapshot_number
+  FROM snapshots
+  WHERE snapshot_number = 1
+     OR department_id IS DISTINCT FROM previous_department_id
+)
+
+SELECT
+  employee_id,
+  department_id,
+  -- The first known department applies to everything before the first load (history starts 2025-06-30)
+  IF(snapshot_number = 1, DATE '1900-01-01', loaded_date) AS valid_from,
+  COALESCE(
+    DATE_SUB(LEAD(loaded_date) OVER (PARTITION BY employee_id ORDER BY loaded_date), INTERVAL 1 DAY),
+    DATE '9999-12-31'
+  ) AS valid_to,
+  LEAD(loaded_date) OVER (PARTITION BY employee_id ORDER BY loaded_date) IS NULL AS is_current
+FROM changes

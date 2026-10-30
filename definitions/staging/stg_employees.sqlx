@@ -1,0 +1,41 @@
+config {
+  type: "view",
+  schema: "payroll_staging",
+  description: "Employee snapshots (one row per employee per load), typed. Missing departments are filled from the payroll lines."
+}
+
+WITH latest_line_department AS (
+  -- Department most recently charged on the employee's valid payroll lines
+  SELECT
+    employee_id,
+    ARRAY_AGG(department_id ORDER BY pay_date DESC, payroll_line_id DESC LIMIT 1)[OFFSET(0)] AS department_id
+  FROM ${ref("stg_payroll_lines")}
+  WHERE line_status = 'POSTED' AND NOT is_voided AND department_id IS NOT NULL
+  GROUP BY employee_id
+)
+
+SELECT
+  TRIM(e.employee_id)                                          AS employee_id,
+  TRIM(e.first_name)                                           AS first_name,
+  TRIM(e.last_name)                                            AS last_name,
+  CONCAT(TRIM(e.first_name), ' ', TRIM(e.last_name))           AS full_name,
+  LOWER(TRIM(e.email))                                         AS email,
+  -- Issue: 4 employees have no department in the HR file.
+  COALESCE(NULLIF(TRIM(e.department_id), ''), l.department_id) AS department_id,
+  NULLIF(TRIM(e.department_id), '') IS NULL                    AS is_department_imputed,
+  TRIM(e.job_title)                                            AS job_title,
+  UPPER(TRIM(e.employment_type))                               AS employment_type,
+  UPPER(NULLIF(TRIM(e.flsa_status), ''))                       AS flsa_status,
+  SAFE_CAST(e.hire_date AS DATE)                               AS hire_date,
+  SAFE_CAST(NULLIF(TRIM(e.termination_date), '') AS DATE)      AS termination_date,
+  UPPER(NULLIF(TRIM(e.termination_reason), ''))                AS termination_reason,
+  TRIM(e.location_state)                                       AS location_state,
+  SAFE_CAST(NULLIF(TRIM(e.annual_salary_usd), '') AS NUMERIC)  AS annual_salary_usd,
+  SAFE_CAST(NULLIF(TRIM(e.hourly_rate_usd), '') AS NUMERIC)    AS hourly_rate_usd,
+  SAFE_CAST(e._loaded_at AS TIMESTAMP)                         AS loaded_at,
+  -- Issue: test accounts (TEST-001, TEST-002, job title "Test Account").
+  STARTS_WITH(UPPER(e.employee_id), 'TEST')
+    OR UPPER(TRIM(e.job_title)) = 'TEST ACCOUNT'               AS is_test_account
+FROM ${ref("employees")} AS e
+LEFT JOIN latest_line_department AS l
+  ON l.employee_id = TRIM(e.employee_id)

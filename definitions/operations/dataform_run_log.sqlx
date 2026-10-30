@@ -1,0 +1,30 @@
+config {
+  type: "operations",
+  schema: "payroll_gold",
+  name: "dataform_run_log",
+  hasOutput: true,
+  description: "Writes one row when the gold layer has been rebuilt AND the custom assertions passed. Looker's datagroup polls MAX(finished_at) to know when to drop its cache and rebuild PDTs.",
+  dependencies: [
+    "agg_department_monthly",
+    "fct_payroll_lines",
+    "fct_employer_contributions",
+    "fct_headcount_month_end",
+    "dim_employee",
+    "dim_employee_department_history",
+    "dim_department",
+    "assert_amounts_parse",
+    "assert_duplicate_ingestions_identical",
+    "assert_void_lines_resolve",
+    "assert_no_test_accounts_in_gold",
+    "assert_one_department_per_employee_run",
+    "assert_contributions_match_payroll",
+    "assert_known_departments",
+    "assert_monthly_summary_reconciles",
+    "assert_budget_complete",
+    "assert_department_history_no_overlap"
+  ]
+}
+
+CREATE TABLE IF NOT EXISTS ${self()} (finished_at TIMESTAMP);
+
+INSERT INTO ${self()} (finished_at) VALUES (CURRENT_TIMESTAMP());

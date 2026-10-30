@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+*.duckdb
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,49 @@
+config {
+  type: "table",
+  schema: "payroll_gold",
+  description: "One row per employee, pay run and contribution type, with the pay date of the run and the cost department charged on the employee's lines in that run.",
+  bigquery: {
+    partitionBy: "pay_date",
+    clusterBy: ["department_id"]
+  },
+  assertions: {
+    uniqueKey: ["pay_run_id", "employee_id", "contribution_type"],
+    nonNull: ["pay_run_id", "employee_id", "contribution_type", "pay_date", "department_id", "amount_usd"],
+    rowConditions: [
+      "contribution_type IN ('FICA', 'HEALTH_INSURANCE', 'RETIREMENT_MATCH')",
+      "amount_usd >= 0"
+    ]
+  }
+}
+
+WITH pay_runs AS (
+  SELECT pay_run_id, MAX(pay_date) AS pay_date
+  FROM ${ref("stg_payroll_lines")}
+  GROUP BY pay_run_id
+),
+
+run_cost_department AS (
+  -- One cost department per employee per run (checked by assert_one_department_per_employee_run)
+  SELECT pay_run_id, employee_id, MAX(department_id) AS department_id
+  FROM ${ref("fct_payroll_lines")}
+  GROUP BY pay_run_id, employee_id
+)
+
+SELECT
+  CONCAT(TRIM(c.pay_run_id), '|', TRIM(c.employee_id), '|', UPPER(TRIM(c.contribution_type))) AS contribution_id,
+  TRIM(c.pay_run_id)                                       AS pay_run_id,
+  TRIM(c.employee_id)                                      AS employee_id,
+  UPPER(TRIM(c.contribution_type))                         AS contribution_type,
+  r.pay_date,
+  DATE_TRUNC(r.pay_date, MONTH)                            AS pay_month,
+  ${fiscal.fiscalYearLabel("r.pay_date")}                  AS fiscal_year,
+  ${fiscal.fiscalQuarterLabel("r.pay_date")}               AS fiscal_quarter,
+  d.department_id,
+  SAFE_CAST(REPLACE(TRIM(c.amount_usd), ',', '') AS NUMERIC) AS amount_usd
+FROM ${ref("employer_contributions")} AS c
+LEFT JOIN pay_runs AS r
+  ON r.pay_run_id = TRIM(c.pay_run_id)
+LEFT JOIN run_cost_department AS d
+  ON d.pay_run_id = TRIM(c.pay_run_id)
+ AND d.employee_id = TRIM(c.employee_id)
+WHERE NOT STARTS_WITH(UPPER(c.employee_id), 'TEST')

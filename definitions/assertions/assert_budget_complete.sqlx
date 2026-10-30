@@ -1,0 +1,15 @@
+config {
+  type: "assertion",
+  description: "Every department-month with payroll needs a budget row, and the budget's fiscal year / period must match its calendar month. Otherwise budget variance would be wrong without anyone noticing."
+}
+
+SELECT department_id, month_start_date, 'payroll without budget' AS problem
+FROM ${ref("agg_department_monthly")}
+WHERE gross_payroll_usd > 0
+  AND budgeted_gross_payroll_usd IS NULL
+
+UNION ALL
+SELECT TRIM(department_id), PARSE_DATE('%Y-%m', TRIM(calendar_month)), 'fiscal year or period does not match calendar month'
+FROM ${ref("budget")}
+WHERE TRIM(fiscal_year) != ${fiscal.fiscalYearLabel("PARSE_DATE('%Y-%m', TRIM(calendar_month))")}
+   OR SAFE_CAST(fiscal_period AS INT64) != ${fiscal.fiscalPeriod("PARSE_DATE('%Y-%m', TRIM(calendar_month))")}

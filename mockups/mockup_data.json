@@ -1,0 +1,257 @@
+{
+ "kpi": {
+  "gross": 2569040.98,
+  "budget": 2669700.0,
+  "var": -0.03770424392253813,
+  "ot_pct": 0.03290418901764657,
+  "ot_pct_ly": 0.0351406435797902,
+  "hc": 175.0,
+  "hc_budget": 179.0,
+  "turn": 0.011385199240986717,
+  "turn_ly": 0.011673151750972763,
+  "fully": 3302652.51
+ },
+ "dept": [
+  {
+   "department_id": "D01",
+   "gross": 231409.09,
+   "budget": 224300.0,
+   "employer": 48439.36,
+   "ot": 347.8,
+   "name": "Executive Office",
+   "var": 0.0317,
+   "used": 1.0317,
+   "fully": 279848.45,
+   "ot_pct": 0.0015,
+   "ot_pct_ly": 0.0
+  },
+  {
+   "department_id": "D02",
+   "gross": 126159.76,
+   "budget": 164800.0,
+   "employer": 33149.4,
+   "ot": 2926.48,
+   "name": "Finance",
+   "var": -0.2345,
+   "used": 0.7655,
+   "fully": 159309.16,
+   "ot_pct": 0.0232,
+   "ot_pct_ly": 0.0185
+  },
+  {
+   "department_id": "D03",
+   "gross": 150886.13,
+   "budget": 151900.0,
+   "employer": 45103.72,
+   "ot": 944.07,
+   "name": "Human Resources",
+   "var": -0.0067,
+   "used": 0.9933,
+   "fully": 195989.85,
+   "ot_pct": 0.0063,
+   "ot_pct_ly": 0.0
+  },
+  {
+   "department_id": "D04",
+   "gross": 606293.54,
+   "budget": 622500.0,
+   "employer": 193742.97,
+   "ot": 31397.65,
+   "name": "Family Services",
+   "var": -0.026,
+   "used": 0.974,
+   "fully": 800036.51,
+   "ot_pct": 0.0518,
+   "ot_pct_ly": 0.0587
+  },
+  {
+   "department_id": "D05",
+   "gross": 546587.21,
+   "budget": 563500.0,
+   "employer": 155079.59,
+   "ot": 17127.37,
+   "name": "Counseling Services",
+   "var": -0.03,
+   "used": 0.97,
+   "fully": 701666.8,
+   "ot_pct": 0.0313,
+   "ot_pct_ly": 0.0312
+  },
+  {
+   "department_id": "D06",
+   "gross": 335625.99,
+   "budget": 347600.0,
+   "employer": 92178.5,
+   "ot": 1619.41,
+   "name": "Development & Fundraising",
+   "var": -0.0344,
+   "used": 0.9656,
+   "fully": 427804.49,
+   "ot_pct": 0.0048,
+   "ot_pct_ly": 0.006
+  },
+  {
+   "department_id": "D07",
+   "gross": 309668.31,
+   "budget": 316600.0,
+   "employer": 100708.69,
+   "ot": 29666.87,
+   "name": "Facilities & Operations",
+   "var": -0.0219,
+   "used": 0.9781,
+   "fully": 410377.0,
+   "ot_pct": 0.0958,
+   "ot_pct_ly": 0.091
+  },
+  {
+   "department_id": "D08",
+   "gross": 262410.95,
+   "budget": 278500.0,
+   "employer": 65209.3,
+   "ot": 502.56,
+   "name": "Information Technology",
+   "var": -0.0578,
+   "used": 0.9422,
+   "fully": 327620.25,
+   "ot_pct": 0.0019,
+   "ot_pct_ly": 0.0091
+  }
+ ],
+ "trend": [
+  {
+   "month": "2025-07",
+   "ot": 35457.7,
+   "gross": 843536.77,
+   "headcount": 171,
+   "budget_hc": 181,
+   "vol_terms": 2.0,
+   "ot_pct": 0.042
+  },
+  {
+   "month": "2025-08",
+   "ot": 29837.07,
+   "gross": 833382.16,
+   "headcount": 171,
+   "budget_hc": 180,
+   "vol_terms": 0.0,
+   "ot_pct": 0.0358
+  },
+  {
+   "month": "2025-09",
+   "ot": 22585.61,
+   "gross": 823899.81,
+   "headcount": 172,
+   "budget_hc": 171,
+   "vol_terms": 0.0,
+   "ot_pct": 0.0274
+  },
+  {
+   "month": "2025-10",
+   "ot": 35940.18,
+   "gross": 1245303.27,
+   "headcount": 173,
+   "budget_hc": 176,
+   "vol_terms": 1.0,
+   "ot_pct": 0.0289
+  },
+  {
+   "month": "2025-11",
+   "ot": 28117.52,
+   "gross": 841155.85,
+   "headcount": 174,
+   "budget_hc": 174,
+   "vol_terms": 0.0,
+   "ot_pct": 0.0334
+  },
+  {
+   "month": "2025-12",
+   "ot": 34760.3,
+   "gross": 855078.23,
+   "headcount": 176,
+   "budget_hc": 177,
+   "vol_terms": 2.0,
+   "ot_pct": 0.0407
+  },
+  {
+   "month": "2026-01",
+   "ot": 26503.7,
+   "gross": 846525.15,
+   "headcount": 173,
+   "budget_hc": 177,
+   "vol_terms": 3.0,
+   "ot_pct": 0.0313
+  },
+  {
+   "month": "2026-02",
+   "ot": 22659.36,
+   "gross": 832460.02,
+   "headcount": 170,
+   "budget_hc": 175,
+   "vol_terms": 4.0,
+   "ot_pct": 0.0272
+  },
+  {
+   "month": "2026-03",
+   "ot": 20085.48,
+   "gross": 814412.18,
+   "headcount": 168,
+   "budget_hc": 178,
+   "vol_terms": 6.0,
+   "ot_pct": 0.0247
+  },
+  {
+   "month": "2026-04",
+   "ot": 24978.61,
+   "gross": 823943.85,
+   "headcount": 174,
+   "budget_hc": 182,
+   "vol_terms": 1.0,
+   "ot_pct": 0.0303
+  },
+  {
+   "month": "2026-05",
+   "ot": 32916.85,
+   "gross": 1269391.68,
+   "headcount": 175,
+   "budget_hc": 185,
+   "vol_terms": 1.0,
+   "ot_pct": 0.0259
+  },
+  {
+   "month": "2026-06",
+   "ot": 28391.87,
+   "gross": 849173.44,
+   "headcount": 173,
+   "budget_hc": 177,
+   "vol_terms": 2.0,
+   "ot_pct": 0.0334
+  },
+  {
+   "month": "2026-07",
+   "ot": 27732.38,
+   "gross": 848075.76,
+   "headcount": 177,
+   "budget_hc": 175,
+   "vol_terms": 0.0,
+   "ot_pct": 0.0327
+  },
+  {
+   "month": "2026-08",
+   "ot": 33024.58,
+   "gross": 862410.81,
+   "headcount": 175,
+   "budget_hc": 177,
+   "vol_terms": 2.0,
+   "ot_pct": 0.0383
+  },
+  {
+   "month": "2026-09",
+   "ot": 23775.25,
+   "gross": 858554.41,
+   "headcount": 175,
+   "budget_hc": 179,
+   "vol_terms": 0.0,
+   "ot_pct": 0.0277
+  }
+ ]
+}

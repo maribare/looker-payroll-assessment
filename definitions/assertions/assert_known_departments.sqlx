@@ -1,0 +1,18 @@
+config {
+  type: "assertion",
+  description: "Issue: employees without a department. Fails if a department is still missing after filling it from payroll, or if any table uses a department_id that is not in the departments file."
+}
+
+WITH known AS (SELECT department_id FROM ${ref("dim_department")})
+
+SELECT 'dim_employee' AS source, employee_id AS id, current_department_id AS department_id
+FROM ${ref("dim_employee")}
+WHERE current_department_id IS NULL OR current_department_id NOT IN (SELECT department_id FROM known)
+UNION ALL
+SELECT 'fct_payroll_lines', payroll_line_id, department_id
+FROM ${ref("fct_payroll_lines")}
+WHERE department_id NOT IN (SELECT department_id FROM known)
+UNION ALL
+SELECT 'agg_department_monthly', CAST(month_start_date AS STRING), department_id
+FROM ${ref("agg_department_monthly")}
+WHERE department_id NOT IN (SELECT department_id FROM known)

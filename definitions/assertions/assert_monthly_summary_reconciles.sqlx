@@ -1,0 +1,19 @@
+config {
+  type: "assertion",
+  description: "The monthly summary must add up to the line-level facts (catches join fan-out or rows lost in the summary). Tolerance: 1 cent."
+}
+
+WITH summary AS (
+  SELECT SUM(gross_payroll_usd) AS gross, SUM(employer_cost_usd) AS employer
+  FROM ${ref("agg_department_monthly")}
+),
+facts AS (
+  SELECT
+    (SELECT SUM(amount_usd) FROM ${ref("fct_payroll_lines")})          AS gross,
+    (SELECT SUM(amount_usd) FROM ${ref("fct_employer_contributions")}) AS employer
+)
+
+SELECT s.gross AS summary_gross, f.gross AS fact_gross, s.employer AS summary_employer, f.employer AS fact_employer
+FROM summary AS s CROSS JOIN facts AS f
+WHERE ABS(s.gross - f.gross) > 0.01
+   OR ABS(s.employer - f.employer) > 0.01

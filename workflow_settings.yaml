@@ -1,0 +1,6 @@
+# Dataform project settings (Dataform core 3.x)
+defaultProject: my-gcp-project        # replace with the real project
+defaultLocation: US
+defaultDataset: payroll_gold
+defaultAssertionDataset: payroll_assertions
+dataformCoreVersion: 3.0.0

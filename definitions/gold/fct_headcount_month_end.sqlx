@@ -1,0 +1,43 @@
+config {
+  type: "table",
+  schema: "payroll_gold",
+  description: "One row per FULL_TIME / PART_TIME employee active on the last day of each month, with the department they belonged to on that day. COUNT(*) per month = headcount.",
+  bigquery: {
+    clusterBy: ["department_id"]
+  },
+  assertions: {
+    uniqueKey: ["employee_id", "month_end_date"],
+    nonNull: ["employee_id", "month_end_date", "department_id"]
+  }
+}
+
+WITH bounds AS (
+  SELECT
+    DATE_TRUNC(MIN(pay_date), MONTH) AS first_month,
+    DATE_TRUNC(MAX(pay_date), MONTH) AS last_month
+  FROM ${ref("fct_payroll_lines")}
+),
+
+month_ends AS (
+  SELECT LAST_DAY(month_start) AS month_end_date
+  FROM bounds, UNNEST(GENERATE_DATE_ARRAY(first_month, last_month, INTERVAL 1 MONTH)) AS month_start
+)
+
+SELECT
+  m.month_end_date,
+  DATE_TRUNC(m.month_end_date, MONTH)             AS month_start_date,
+  ${fiscal.fiscalYearLabel("m.month_end_date")}   AS fiscal_year,
+  ${fiscal.fiscalQuarterLabel("m.month_end_date")} AS fiscal_quarter,
+  e.employee_id,
+  h.department_id,
+  e.employment_type,
+  e.job_title
+FROM month_ends AS m
+JOIN ${ref("dim_employee")} AS e
+  -- Active = hired on or before the day, and not terminated on or before the day
+  ON e.hire_date <= m.month_end_date
+ AND (e.termination_date IS NULL OR e.termination_date > m.month_end_date)
+JOIN ${ref("dim_employee_department_history")} AS h
+  ON h.employee_id = e.employee_id
+ AND m.month_end_date BETWEEN h.valid_from AND h.valid_to
+WHERE e.counts_in_headcount

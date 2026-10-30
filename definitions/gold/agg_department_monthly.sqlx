@@ -1,0 +1,104 @@
+config {
+  type: "table",
+  schema: "payroll_gold",
+  description: "One row per department per calendar month: gross payroll, employer cost, overtime, month-end headcount, voluntary exits and budget. Includes the same month of the prior fiscal year for comparisons. Main source for the executive dashboard.",
+  assertions: {
+    uniqueKey: ["department_id", "month_start_date"],
+    nonNull: ["department_id", "month_start_date", "fiscal_year"]
+  }
+}
+
+WITH payroll AS (
+  SELECT
+    department_id,
+    pay_month                  AS month_start_date,
+    SUM(amount_usd)            AS gross_payroll_usd,
+    SUM(overtime_amount_usd)   AS overtime_usd,
+    SUM(overtime_hours)        AS overtime_hours,
+    SUM(hours)                 AS paid_hours
+  FROM ${ref("fct_payroll_lines")}
+  GROUP BY 1, 2
+),
+
+employer AS (
+  SELECT department_id, pay_month AS month_start_date, SUM(amount_usd) AS employer_cost_usd
+  FROM ${ref("fct_employer_contributions")}
+  GROUP BY 1, 2
+),
+
+headcount AS (
+  SELECT department_id, month_start_date, COUNT(*) AS headcount
+  FROM ${ref("fct_headcount_month_end")}
+  GROUP BY 1, 2
+),
+
+exits AS (
+  -- Exits are assigned to the department the employee belonged to on the termination date
+  SELECT
+    h.department_id,
+    DATE_TRUNC(e.termination_date, MONTH)                     AS month_start_date,
+    COUNTIF(e.termination_reason = 'VOLUNTARY')               AS voluntary_exits,
+    COUNT(*)                                                  AS total_exits
+  FROM ${ref("dim_employee")} AS e
+  JOIN ${ref("dim_employee_department_history")} AS h
+    ON h.employee_id = e.employee_id
+   AND e.termination_date BETWEEN h.valid_from AND h.valid_to
+  WHERE e.counts_in_headcount
+    AND e.termination_date IS NOT NULL
+  GROUP BY 1, 2
+),
+
+budget AS (
+  SELECT
+    TRIM(department_id)                                        AS department_id,
+    PARSE_DATE('%Y-%m', TRIM(calendar_month))                  AS month_start_date,
+    SAFE_CAST(REPLACE(budgeted_gross_payroll_usd, ',', '') AS NUMERIC) AS budgeted_gross_payroll_usd,
+    SAFE_CAST(budgeted_headcount AS INT64)                     AS budgeted_headcount
+  FROM ${ref("budget")}
+),
+
+spine AS (
+  -- Every department-month that has actuals or budget, inside the period covered by payroll
+  SELECT department_id, month_start_date FROM payroll
+  UNION DISTINCT SELECT department_id, month_start_date FROM budget
+  UNION DISTINCT SELECT department_id, month_start_date FROM headcount
+),
+
+monthly AS (
+  SELECT
+    s.department_id,
+    s.month_start_date,
+    ${fiscal.fiscalYearLabel("s.month_start_date")}     AS fiscal_year,
+    ${fiscal.fiscalQuarterLabel("s.month_start_date")}  AS fiscal_quarter,
+    ${fiscal.fiscalPeriod("s.month_start_date")}        AS fiscal_period,
+    COALESCE(p.gross_payroll_usd, 0)                    AS gross_payroll_usd,
+    COALESCE(p.overtime_usd, 0)                         AS overtime_usd,
+    COALESCE(p.overtime_hours, 0)                       AS overtime_hours,
+    COALESCE(p.paid_hours, 0)                           AS paid_hours,
+    COALESCE(r.employer_cost_usd, 0)                    AS employer_cost_usd,
+    COALESCE(h.headcount, 0)                            AS headcount,
+    COALESCE(x.voluntary_exits, 0)                      AS voluntary_exits,
+    COALESCE(x.total_exits, 0)                          AS total_exits,
+    b.budgeted_gross_payroll_usd,
+    b.budgeted_headcount
+  FROM spine AS s
+  LEFT JOIN payroll   AS p USING (department_id, month_start_date)
+  LEFT JOIN employer  AS r USING (department_id, month_start_date)
+  LEFT JOIN headcount AS h USING (department_id, month_start_date)
+  LEFT JOIN exits     AS x USING (department_id, month_start_date)
+  LEFT JOIN budget    AS b USING (department_id, month_start_date)
+  WHERE s.month_start_date <= (SELECT MAX(pay_month) FROM ${ref("fct_payroll_lines")})
+)
+
+SELECT
+  cur.*,
+  -- Same month, prior fiscal year (NULL when there is no history)
+  prv.gross_payroll_usd  AS prior_year_gross_payroll_usd,
+  prv.overtime_usd       AS prior_year_overtime_usd,
+  prv.employer_cost_usd  AS prior_year_employer_cost_usd,
+  prv.headcount          AS prior_year_headcount,
+  prv.voluntary_exits    AS prior_year_voluntary_exits
+FROM monthly AS cur
+LEFT JOIN monthly AS prv
+  ON prv.department_id = cur.department_id
+ AND prv.month_start_date = DATE_SUB(cur.month_start_date, INTERVAL 12 MONTH)

@@ -1,0 +1,32 @@
+config {
+  type: "assertion",
+  description: "Issue: VOID lines repeat the original amount as a positive number. Our rule (drop the VOID and the original) relies on: every VOID points to an existing POSTED line of the same employee, with the same amount, and each line is voided only once. Fails if any of that breaks, e.g. if the source starts sending negative reversals."
+}
+
+WITH voids AS (
+  SELECT * FROM ${ref("stg_payroll_lines")} WHERE line_status = 'VOID'
+)
+
+SELECT v.payroll_line_id, v.voids_line_id, 'void points to a missing line' AS problem
+FROM voids AS v
+LEFT JOIN ${ref("stg_payroll_lines")} AS o ON o.payroll_line_id = v.voids_line_id
+WHERE o.payroll_line_id IS NULL
+
+UNION ALL
+SELECT v.payroll_line_id, v.voids_line_id, 'void does not match the original line'
+FROM voids AS v
+JOIN ${ref("stg_payroll_lines")} AS o ON o.payroll_line_id = v.voids_line_id
+WHERE o.line_status != 'POSTED'
+   OR o.employee_id != v.employee_id
+   OR o.amount_usd != v.amount_usd
+
+UNION ALL
+SELECT ANY_VALUE(payroll_line_id), voids_line_id, 'line voided more than once'
+FROM voids
+GROUP BY voids_line_id
+HAVING COUNT(*) > 1
+
+UNION ALL
+SELECT payroll_line_id, voids_line_id, 'void without a reference'
+FROM voids
+WHERE voids_line_id IS NULL

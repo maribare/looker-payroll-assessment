@@ -1,0 +1,11 @@
+config {
+  type: "assertion",
+  description: "Department history must not overlap: on any date an employee belongs to exactly one department. Otherwise headcount by department would double count."
+}
+
+SELECT a.employee_id, a.valid_from, b.valid_from AS overlapping_valid_from
+FROM ${ref("dim_employee_department_history")} AS a
+JOIN ${ref("dim_employee_department_history")} AS b
+  ON a.employee_id = b.employee_id
+ AND a.valid_from < b.valid_from
+ AND a.valid_to >= b.valid_from

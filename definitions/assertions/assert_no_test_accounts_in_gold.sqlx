@@ -1,0 +1,20 @@
+config {
+  type: "assertion",
+  description: "Issue: test accounts. Fails if a test account reaches any gold table, including one with a new naming pattern (job title 'Test Account' or a test e-mail)."
+}
+
+WITH test_ids AS (
+  SELECT DISTINCT employee_id
+  FROM ${ref("stg_employees")}
+  WHERE is_test_account
+     OR LOWER(email) LIKE '%test%@%'
+)
+
+SELECT 'fct_payroll_lines' AS table_name, employee_id
+FROM ${ref("fct_payroll_lines")} WHERE employee_id IN (SELECT employee_id FROM test_ids)
+UNION ALL
+SELECT 'fct_employer_contributions', employee_id
+FROM ${ref("fct_employer_contributions")} WHERE employee_id IN (SELECT employee_id FROM test_ids)
+UNION ALL
+SELECT 'dim_employee', employee_id
+FROM ${ref("dim_employee")} WHERE employee_id IN (SELECT employee_id FROM test_ids)

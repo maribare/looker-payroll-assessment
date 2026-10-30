@@ -1,0 +1,41 @@
+config {
+  type: "table",
+  schema: "payroll_gold",
+  description: "One current row per employee (latest snapshot). Test accounts excluded. Contains pay rates: only exposed in Looker to HR and Finance.",
+  assertions: {
+    uniqueKey: ["employee_id"],
+    nonNull: ["employee_id", "department_id", "employment_type", "hire_date"],
+    rowConditions: [
+      "employment_type IN ('FULL_TIME', 'PART_TIME', 'CONTRACTOR')",
+      "termination_date IS NULL OR termination_date >= hire_date",
+      "(termination_date IS NULL) = (termination_reason IS NULL)",
+      "annual_salary_usd IS NOT NULL OR hourly_rate_usd IS NOT NULL"
+    ]
+  }
+}
+
+SELECT
+  employee_id,
+  first_name,
+  last_name,
+  full_name,
+  email,
+  department_id                                       AS current_department_id,
+  is_department_imputed,
+  job_title,
+  employment_type,
+  flsa_status,
+  hire_date,
+  termination_date,
+  termination_reason,
+  location_state,
+  annual_salary_usd,
+  hourly_rate_usd,
+  IF(annual_salary_usd IS NOT NULL, 'SALARIED', 'HOURLY') AS pay_basis,
+  -- Full-time-equivalent annual base pay: salary, or hourly rate x 2,080 hours
+  COALESCE(annual_salary_usd, hourly_rate_usd * 2080)  AS annualized_base_pay_usd,
+  employment_type IN ('FULL_TIME', 'PART_TIME')        AS counts_in_headcount,
+  loaded_at                                            AS last_loaded_at
+FROM ${ref("stg_employees")}
+WHERE NOT is_test_account
+QUALIFY ROW_NUMBER() OVER (PARTITION BY employee_id ORDER BY loaded_at DESC) = 1

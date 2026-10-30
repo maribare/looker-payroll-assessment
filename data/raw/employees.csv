@@ -1,0 +1,236 @@
+employee_id,first_name,last_name,email,department_id,job_title,employment_type,flsa_status,hire_date,termination_date,termination_reason,location_state,annual_salary_usd,hourly_rate_usd,_loaded_at
+E1069,Laura,Johnson,laura.johnson69@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2024-02-21,,,TX,53100.0,,2025-06-30 02:00:00 UTC
+E1064,Brian,Davis,brian.davis64@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2022-07-09,,,TX,,23.55,2025-06-30 02:00:00 UTC
+E1041,Jason,Torres,jason.torres41@example.org,D06,Intake Specialist,FULL_TIME,NON_EXEMPT,2019-09-02,,,CO,,21.83,2025-11-01 02:00:00 UTC
+E1133,Michael,Mitchell,michael.mitchell33@example.org,D06,Events Coordinator,PART_TIME,NON_EXEMPT,2021-09-13,,,CO,,24.59,2025-06-30 02:00:00 UTC
+E1197,Rosa,Hill,rosa.hill97@example.org,D02,Payroll Specialist,FULL_TIME,NON_EXEMPT,2026-03-17,,,TX,,32.39,2026-03-17 02:00:00 UTC
+E1091,Megan,Garcia,megan.garcia91@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2021-01-19,,,TX,78800.0,,2025-06-30 02:00:00 UTC
+E1138,Sofia,Johnson,sofia.johnson38@example.org,,Driver,FULL_TIME,NON_EXEMPT,2023-07-01,,,AR,,22.36,2025-06-30 02:00:00 UTC
+E1160,Chloe,Evans,chloe.evans60@example.org,D08,IT Manager,FULL_TIME,EXEMPT,2021-07-03,,,TX,138000.0,,2025-06-30 02:00:00 UTC
+E1146,David,Thomas,david.thomas46@example.org,D07,Receptionist,PART_TIME,NON_EXEMPT,2025-02-21,,,OK,,20.29,2025-06-30 02:00:00 UTC
+E1087,Kevin,Jackson,kevin.jackson87@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2018-09-08,,,TX,,21.65,2025-06-30 02:00:00 UTC
+E1152,Daniel,Johnson,daniel.johnson52@example.org,D07,Driver,PART_TIME,NON_EXEMPT,2015-04-16,,,TX,,20.69,2025-06-30 02:00:00 UTC
+E1122,Paula,Evans,paula.evans22@example.org,D04,Grants Manager,FULL_TIME,EXEMPT,2022-07-06,,,TX,81200.0,,2026-07-12 02:00:00 UTC
+E1200,Aaron,Walker,aaron.walker0@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2025-11-30,,,TX,,25.45,2025-11-30 02:00:00 UTC
+E1018,Jason,Anderson,JASON.ANDERSON18@EXAMPLE.ORG,D01,AP Clerk,FULL_TIME,NON_EXEMPT,2024-03-14,,,TX,,23.66,2026-02-28 02:00:00 UTC
+E1032,Robert,Jackson,robert.jackson32@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2025-02-04,2026-06-02,INVOLUNTARY,TX,,23.9,2025-06-30 02:00:00 UTC
+E1109,Andre,Garcia,andre.garcia9@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2019-06-11,2026-01-20,VOLUNTARY,TX,,28.43,2025-06-30 02:00:00 UTC
+E1103,Chloe,Mitchell,chloe.mitchell3@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2017-04-05,,,NM,,28.68,2025-06-30 02:00:00 UTC
+E1007,Paula,Adams,paula.adams7@example.org,D02,Controller,FULL_TIME,EXEMPT,2013-09-04,,,TX,122600.0,,2025-06-30 02:00:00 UTC
+E1120,Emily,Turner,emily.turner20@example.org,D06,Events Coordinator,PART_TIME,NON_EXEMPT,2022-08-21,,,TX,,22.24,2025-06-30 02:00:00 UTC
+E1204,Grace,Scott,grace.scott4@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2025-09-17,,,LA,,20.37,2025-09-17 02:00:00 UTC
+E1009,Ryan,Thomas,ryan.thomas9@example.org,D02,Payroll Specialist,PART_TIME,NON_EXEMPT,2023-10-02,,,AR,,28.86,2025-06-30 02:00:00 UTC
+E1132,Victor,Davis,victor.davis32@example.org,D06,Events Coordinator,FULL_TIME,NON_EXEMPT,2017-09-27,,,OK,,25.66,2025-06-30 02:00:00 UTC
+E1130,Carlos,Martinez,carlos.martinez30@example.org,D03,Donor Relations Officer,FULL_TIME,EXEMPT,2023-07-03,,,NM,75100.0,,2026-04-16 02:00:00 UTC
+E1175,Andre,Wright,andre.wright75@example.org,D07,Driver,FULL_TIME,NON_EXEMPT,2026-05-11,,,OK,,18.87,2026-05-11 02:00:00 UTC
+E1214,Grace,Harris,grace.harris14@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2025-09-04,,,TX,,23.66,2025-09-04 02:00:00 UTC
+E1037,Megan,Moore,megan.moore37@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2016-10-09,2025-10-22,INVOLUNTARY,TX,50900.0,,2025-06-30 02:00:00 UTC
+E1080,Marcus,Baker,marcus.baker80@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2021-09-27,2025-07-22,VOLUNTARY,NM,,22.66,2025-06-30 02:00:00 UTC
+E1071,Laura,Parker,laura.parker71@example.org,D04,Intake Specialist,PART_TIME,NON_EXEMPT,2016-03-12,2026-03-19,VOLUNTARY,TX,,21.59,2025-06-30 02:00:00 UTC
+E1128,Tara,Turner,tara.turner28@example.org,D06,Events Coordinator,FULL_TIME,NON_EXEMPT,2022-07-18,,,TX,,24.55,2025-06-30 02:00:00 UTC
+E1074,Hannah,Smith,hannah.smith74@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2025-06-08,,,TX,55200.0,,2025-06-30 02:00:00 UTC
+E1193,Laura,Nelson,laura.nelson93@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2026-04-05,,,OK,,26.84,2026-04-05 02:00:00 UTC
+E1163,Julia,Smith,julia.smith63@example.org,D08,Systems Administrator,FULL_TIME,EXEMPT,2024-09-13,,,TX,94400.0,,2025-06-30 02:00:00 UTC
+E1016,Robert,Collins,robert.collins16@example.org,D02,Payroll Specialist,FULL_TIME,NON_EXEMPT,2024-06-24,,,TX,,27.02,2025-06-30 02:00:00 UTC
+E1085,Paula,Young,paula.young85@example.org,D05,Counselor Associate,PART_TIME,NON_EXEMPT,2017-03-28,,,OK,,30.26,2025-06-30 02:00:00 UTC
+E1019,Kevin,Collins,kevin.collins19@example.org,D03,HR Director,FULL_TIME,EXEMPT,2016-01-10,,,AR,116300.0,,2025-06-30 02:00:00 UTC
+E1108,Aaron,Wright,aaron.wright8@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2016-02-25,,,NM,78300.0,,2025-06-30 02:00:00 UTC
+E1078,Laura,Phillips,laura.phillips78@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2025-06-07,,,TX,,27.04,2025-06-30 02:00:00 UTC
+E1174,Luis,Mitchell,luis.mitchell74@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2026-04-24,2026-06-06,VOLUNTARY,LA,,24.08,2026-04-24 02:00:00 UTC
+E1093,Eric,Young,eric.young93@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2014-11-12,,,TX,,29.35,2025-06-30 02:00:00 UTC
+E1073,Ryan,Phillips,ryan.phillips73@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2014-03-12,,,TX,,24.49,2025-06-30 02:00:00 UTC
+E1057,Paula,Harris,paula.harris57@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2016-05-18,,,AR,,26.49,2025-06-30 02:00:00 UTC
+E1015,Paula,Smith,paula.smith15@example.org,D02,AP Clerk,FULL_TIME,NON_EXEMPT,2025-01-08,2026-05-02,INVOLUNTARY,TX,,21.7,2025-06-30 02:00:00 UTC
+E1194,Julia,Carter,julia.carter94@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2026-03-12,,,CO,,25.81,2026-03-12 02:00:00 UTC
+E1053,Megan,Hall,megan.hall53@example.org,,Intake Specialist,FULL_TIME,NON_EXEMPT,2023-08-12,,,AR,,24.36,2025-06-30 02:00:00 UTC
+E1176,Tara,Baker,tara.baker76@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2026-07-20,,,TX,,25.57,2026-07-20 02:00:00 UTC
+E1166,Victor,White,victor.white66@example.org,D08,Help Desk Technician,FULL_TIME,NON_EXEMPT,2023-02-16,2026-03-11,VOLUNTARY,CO,,27.0,2025-06-30 02:00:00 UTC
+E1165,Kevin,Lewis,kevin.lewis65@example.org,D08,Help Desk Technician,FULL_TIME,NON_EXEMPT,2020-09-06,,,TX,,25.91,2025-06-30 02:00:00 UTC
+E1031,Carlos,Davis,carlos.davis31@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2025-06-01,,,TX,58300.0,,2025-06-30 02:00:00 UTC
+E1202,Laura,White,laura.white2@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2026-04-03,,,TX,,26.37,2026-04-03 02:00:00 UTC
+E1039,Marcus,Mitchell,marcus.mitchell39@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2022-01-01,2026-03-19,VOLUNTARY,TX,,23.73,2025-06-30 02:00:00 UTC
+E1123,Emily,Young,emily.young23@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2014-08-15,,,TX,75000.0,,2025-06-30 02:00:00 UTC
+E1033,Robert,Stewart,robert.stewart33@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2021-04-18,,,TX,53300.0,,2025-06-30 02:00:00 UTC
+E1209,Samuel,Clark,samuel.clark9@example.org,D06,Grants Manager,FULL_TIME,EXEMPT,2026-07-24,,,TX,87400.0,,2026-07-24 02:00:00 UTC
+TEST-002,Test,User2,payroll.test2@example.org,D02,Test Account,FULL_TIME,EXEMPT,2025-01-01,,,TX,52000.0,,2025-06-30 02:00:00 UTC
+E1008,Ryan,Adams,ryan.adams8@example.org,D02,AP Clerk,FULL_TIME,NON_EXEMPT,2016-03-01,,,TX,,24.61,2025-06-30 02:00:00 UTC
+E1114,Maria,Stewart,maria.stewart14@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2020-03-19,,,OK,,23.46,2025-06-30 02:00:00 UTC
+E1219,Grace,Lewis,grace.lewis19@example.org,D08,Help Desk Technician,CONTRACTOR,,2025-11-22,,,LA,,64.96,2025-11-22 02:00:00 UTC
+E1169,Laura,Adams,laura.adams69@example.org,D08,Help Desk Technician,FULL_TIME,NON_EXEMPT,2019-01-19,,,TX,,24.48,2025-06-30 02:00:00 UTC
+E1201,Michael,Thomas,michael.thomas1@example.org,D08,Systems Administrator,FULL_TIME,EXEMPT,2026-02-09,,,TX,92700.0,,2026-02-09 02:00:00 UTC
+E1096,Erin,Evans,erin.evans96@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2015-10-14,2026-02-14,INVOLUNTARY,TX,,30.69,2025-06-30 02:00:00 UTC
+E1129,Laura,Wright,laura.wright29@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2015-01-18,,,NM,63400.0,,2025-06-30 02:00:00 UTC
+E1101,Ryan,Lewis,ryan.lewis1@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2015-03-08,,,TX,,29.28,2025-06-30 02:00:00 UTC
+E1072,Kevin,Ramirez,kevin.ramirez72@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2025-05-15,,,TX,,23.85,2025-06-30 02:00:00 UTC
+E1205,Tyler,Jackson,tyler.jackson5@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2025-11-02,,,TX,82100.0,,2025-11-02 02:00:00 UTC
+E1086,David,Martinez,david.martinez86@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2015-05-13,,,TX,72400.0,,2025-06-30 02:00:00 UTC
+E1177,Chloe,Green,chloe.green77@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2026-02-08,,,AR,53000.0,,2026-02-08 02:00:00 UTC
+E1140,Samuel,Mitchell,samuel.mitchell40@example.org,D07,Maintenance Technician,FULL_TIME,NON_EXEMPT,2017-05-19,2025-07-25,VOLUNTARY,LA,,28.82,2025-06-30 02:00:00 UTC
+E1077,Olivia,Martinez,olivia.martinez77@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2019-06-08,2026-01-31,INVOLUNTARY,TX,77500.0,,2025-06-30 02:00:00 UTC
+E1195,Omar,Green,omar.green95@example.org,D07,Receptionist,FULL_TIME,NON_EXEMPT,2025-10-24,,,CO,,17.67,2025-10-24 02:00:00 UTC
+E1056,Luis,Walker,luis.walker56@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2014-01-24,2026-02-27,VOLUNTARY,TX,64300.0,,2025-06-30 02:00:00 UTC
+E1212,David,Smith,david.smith12@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2026-05-29,,,NM,,22.11,2026-05-29 02:00:00 UTC
+E1126,Grace,Wilson,grace.wilson26@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2025-04-19,,,TX,64500.0,,2025-06-30 02:00:00 UTC
+E1121,Grace,Mitchell,grace.mitchell21@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2017-07-22,,,TX,65800.0,,2025-06-30 02:00:00 UTC
+E1047,Eric,Edwards,eric.edwards47@example.org,D05,Case Manager,FULL_TIME,EXEMPT,2016-08-22,,,TX,56000.0,,2025-12-23 02:00:00 UTC
+E1067,Carlos,Baker,carlos.baker67@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2022-08-18,2026-02-02,VOLUNTARY,TX,,24.24,2025-06-30 02:00:00 UTC
+E1038,Rosa,Thomas,rosa.thomas38@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2018-12-04,,,TX,,20.32,2025-06-30 02:00:00 UTC
+E1162,Aaron,Stewart,aaron.stewart62@example.org,D08,Systems Administrator,FULL_TIME,EXEMPT,2023-10-13,,,TX,93800.0,,2025-06-30 02:00:00 UTC
+E1134,Samuel,Wright,samuel.wright34@example.org,D07,Operations Manager,FULL_TIME,EXEMPT,2018-04-10,,,AR,102300.0,,2025-06-30 02:00:00 UTC
+E1002,Maria,Johnson,maria.johnson2@example.org,D01,Chief Operating Officer,FULL_TIME,EXEMPT,2023-02-28,,,TX,199500.0,,2025-06-30 02:00:00 UTC
+E1081,Eric,Campbell,eric.campbell81@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2015-04-03,,,TX,,23.17,2025-06-30 02:00:00 UTC
+E1159,Kevin,Mitchell,kevin.mitchell59@example.org,D07,Receptionist,FULL_TIME,NON_EXEMPT,2014-07-03,,,NM,,19.94,2025-06-30 02:00:00 UTC
+E1054,Ryan,Martinez,ryan.martinez54@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2023-05-05,,,TX,54200.0,,2025-06-30 02:00:00 UTC
+E1135,Ana,Campbell,ana.campbell35@example.org,D07,Maintenance Technician,FULL_TIME,NON_EXEMPT,2021-04-19,,,TX,,28.88,2025-06-30 02:00:00 UTC
+E1154,Lucia,Wilson,lucia.wilson54@example.org,D07,Maintenance Technician,FULL_TIME,NON_EXEMPT,2015-02-14,,,AR,,28.89,2025-06-30 02:00:00 UTC
+E1215,Jennifer,Anderson,jennifer.anderson15@example.org,D08,Data Analyst,CONTRACTOR,,2026-03-19,,,TX,,65.66,2026-03-19 02:00:00 UTC
+E1046,Jennifer,Moore,jennifer.moore46@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2022-10-20,,,TX,56900.0,,2025-06-30 02:00:00 UTC
+E1068,Olivia,Smith,olivia.smith68@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2017-08-13,2025-10-07,VOLUNTARY,NM,,22.06,2025-06-30 02:00:00 UTC
+E1196,James,Smith,james.smith96@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2025-12-05,2026-03-16,VOLUNTARY,TX,,21.62,2025-12-05 02:00:00 UTC
+E1029,Kevin,Phillips,kevin.phillips29@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2021-04-18,,,TX,,21.1,2025-06-30 02:00:00 UTC
+E1173,David,Anderson,david.anderson73@example.org,D08,Data Analyst,FULL_TIME,EXEMPT,2015-11-17,2026-03-05,VOLUNTARY,NM,81300.0,,2025-06-30 02:00:00 UTC
+E1070,Marcus,Jackson,marcus.jackson70@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2022-07-08,2026-04-09,INVOLUNTARY,TX,,22.81,2025-06-30 02:00:00 UTC
+E1048,Marcus,Davis,marcus.davis48@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2014-10-07,,,LA,57800.0,,2025-06-30 02:00:00 UTC
+E1108,Aaron,Wright,aaron.wright8@example.org,D04,Licensed Counselor,FULL_TIME,EXEMPT,2016-02-25,,,NM,78300.0,,2025-11-03 02:00:00 UTC
+E1168,Tyler,Martinez,tyler.martinez68@example.org,,Systems Administrator,FULL_TIME,EXEMPT,2017-03-23,,,OK,86400.0,,2025-06-30 02:00:00 UTC
+E1216,Michael,Green,michael.green16@example.org,D06,Grants Manager,CONTRACTOR,,2025-03-01,,,TX,,82.71,2025-06-30 02:00:00 UTC
+E1112,Lucia,Nelson,lucia.nelson12@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2014-07-14,2025-10-06,INVOLUNTARY,TX,,21.44,2025-06-30 02:00:00 UTC
+E1049,Andre,Phillips,andre.phillips49@example.org,,Case Manager,FULL_TIME,EXEMPT,2015-02-24,,,TX,61700.0,,2025-06-30 02:00:00 UTC
+E1063,Daniel,Ramirez,daniel.ramirez63@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2018-12-25,,,TX,,23.33,2025-06-30 02:00:00 UTC
+E1199,Tyler,Young,tyler.young99@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2026-05-10,,,OK,,23.38,2026-05-10 02:00:00 UTC
+E1083,Olivia,Edwards,olivia.edwards83@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2015-11-06,,,NM,,30.99,2025-06-30 02:00:00 UTC
+E1058,Jennifer,Edwards,jennifer.edwards58@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2020-05-08,,,OK,,27.28,2025-06-30 02:00:00 UTC
+E1122,Paula,Evans,paula.evans22@example.org,D06,Grants Manager,FULL_TIME,EXEMPT,2022-07-06,,,TX,81200.0,,2025-06-30 02:00:00 UTC
+E1062,Michael,Campbell,michael.campbell62@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2018-06-12,2026-06-04,VOLUNTARY,TX,61500.0,,2025-06-30 02:00:00 UTC
+E1013,Patricia,Edwards,patricia.edwards13@example.org,D02,AP Clerk,FULL_TIME,NON_EXEMPT,2019-01-15,2026-08-20,VOLUNTARY,TX,,24.98,2025-06-30 02:00:00 UTC
+E1092,Victor,Nelson,victor.nelson92@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2020-11-19,,,CO,73000.0,,2025-06-30 02:00:00 UTC
+E1144,Lucia,Adams,lucia.adams44@example.org,D07,Driver,FULL_TIME,NON_EXEMPT,2021-05-17,,,TX,,20.46,2025-06-30 02:00:00 UTC
+E1075,Erin,Smith,erin.smith75@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2019-04-18,2026-09-15,RETIREMENT,CO,61200.0,,2025-06-30 02:00:00 UTC
+E1076,Olivia,Roberts,olivia.roberts76@example.org,D05,Clinical Director,FULL_TIME,EXEMPT,2016-09-30,,,CO,119400.0,,2025-06-30 02:00:00 UTC
+E1167,Ryan,Jackson,ryan.jackson67@example.org,D08,Systems Administrator,FULL_TIME,EXEMPT,2019-06-03,,,TX,85400.0,,2025-06-30 02:00:00 UTC
+E1036,Laura,Torres,laura.torres36@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2023-03-16,,,LA,,23.47,2025-06-30 02:00:00 UTC
+E1156,Omar,Walker,omar.walker56@example.org,D07,Maintenance Technician,FULL_TIME,NON_EXEMPT,2022-07-04,,,TX,,24.89,2025-06-30 02:00:00 UTC
+E1210,Eric,Collins,eric.collins10@example.org,D06,Grants Manager,FULL_TIME,EXEMPT,2025-10-10,,,NM,72100.0,,2025-10-10 02:00:00 UTC
+E1151,James,Carter,james.carter51@example.org,D07,Receptionist,FULL_TIME,NON_EXEMPT,2016-11-19,,,NM,,18.7,2025-06-30 02:00:00 UTC
+E1147,Daniel,Baker,daniel.baker47@example.org,D07,Maintenance Technician,FULL_TIME,NON_EXEMPT,2016-11-08,2026-04-07,VOLUNTARY,TX,,26.56,2025-06-30 02:00:00 UTC
+E1220,Patricia,Nelson,patricia.nelson20@example.org,D08,Systems Administrator,CONTRACTOR,,2025-06-27,,,AR,,92.12,2025-06-30 02:00:00 UTC
+E1184,Victor,Roberts,victor.roberts84@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2026-07-05,,,TX,,25.63,2026-07-05 02:00:00 UTC
+E1171,Hannah,Campbell,hannah.campbell71@example.org,D08,Data Analyst,FULL_TIME,EXEMPT,2019-04-05,,,TX,87900.0,,2025-06-30 02:00:00 UTC
+E1141,Carlos,Davis,carlos.davis41@example.org,D07,Driver,FULL_TIME,NON_EXEMPT,2021-01-20,,,TX,,19.73,2025-06-30 02:00:00 UTC
+E1218,Paula,Wright,paula.wright18@example.org,D08,Data Analyst,CONTRACTOR,,2025-10-06,,,TX,,83.12,2025-10-06 02:00:00 UTC
+E1191,Sofia,Mitchell,sofia.mitchell91@example.org,D08,Data Analyst,FULL_TIME,EXEMPT,2026-04-11,2026-05-23,VOLUNTARY,CO,85900.0,,2026-04-11 02:00:00 UTC
+E1098,Victor,Young,victor.young98@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2019-06-29,,,OK,,21.64,2025-06-30 02:00:00 UTC
+E1079,Tyler,Moore,tyler.moore79@example.org,D05,Counselor Associate,PART_TIME,NON_EXEMPT,2020-12-28,,,TX,,29.34,2025-06-30 02:00:00 UTC
+E1097,Sofia,White,sofia.white97@example.org,D05,Counselor Associate,PART_TIME,NON_EXEMPT,2025-05-14,,,TX,,31.17,2025-06-30 02:00:00 UTC
+E1095,Samuel,Stewart,samuel.stewart95@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2017-09-07,,,TX,72800.0,,2025-06-30 02:00:00 UTC
+E1014,Rosa,Scott,rosa.scott14@example.org,D02,AP Clerk,FULL_TIME,NON_EXEMPT,2022-08-03,2026-02-03,VOLUNTARY,TX,,23.0,2025-06-30 02:00:00 UTC
+E1203,Omar,Roberts,omar.roberts3@example.org,D08,Data Analyst,FULL_TIME,EXEMPT,2026-04-05,,,TX,85300.0,,2026-04-05 02:00:00 UTC
+E1178,Nina,Davis,nina.davis78@example.org,D08,Systems Administrator,FULL_TIME,EXEMPT,2026-04-13,,,NM,96300.0,,2026-04-13 02:00:00 UTC
+E1012,Lucia,White,lucia.white12@example.org,D02,Payroll Specialist,FULL_TIME,NON_EXEMPT,2016-11-13,,,NM,,28.22,2025-06-30 02:00:00 UTC
+E1207,Daniel,Wright,daniel.wright7@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2025-10-29,2025-12-23,VOLUNTARY,CO,,21.51,2025-10-29 02:00:00 UTC
+E1082,Victor,Walker,victor.walker82@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2015-07-29,2026-01-04,VOLUNTARY,AR,,26.27,2025-06-30 02:00:00 UTC
+E1142,Jennifer,Collins,jennifer.collins42@example.org,D07,Driver,FULL_TIME,NON_EXEMPT,2019-03-13,,,NM,,20.6,2025-06-30 02:00:00 UTC
+E1035,Olivia,Ramirez,olivia.ramirez35@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2020-09-03,,,NM,,24.28,2025-06-30 02:00:00 UTC
+E1164,Ana,Martinez,ana.martinez64@example.org,D08,Systems Administrator,FULL_TIME,EXEMPT,2019-08-13,,,TX,82000.0,,2025-06-30 02:00:00 UTC
+E1001,Linda,Anderson,linda.anderson1@example.org,D01,Chief Executive Officer,FULL_TIME,EXEMPT,2013-09-18,,,TX,227400.0,,2025-06-30 02:00:00 UTC
+E1006,Omar,Turner,omar.turner6@example.org,D01,Executive Assistant,FULL_TIME,NON_EXEMPT,2018-10-25,,,TX,,30.19,2025-06-30 02:00:00 UTC
+E1143,Andre,Jackson,andre.jackson43@example.org,D07,Maintenance Technician,FULL_TIME,NON_EXEMPT,2017-11-11,,,TX,,27.74,2025-06-30 02:00:00 UTC
+E1106,Ana,Young,ana.young6@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2019-09-25,,,OK,,29.31,2025-06-30 02:00:00 UTC
+E1221,Carlos,Walker,carlos.walker21@example.org,D06,Events Coordinator,CONTRACTOR,,2025-04-14,,,TX,,61.18,2025-06-30 02:00:00 UTC
+E1022,Jennifer,Stewart,jennifer.stewart22@example.org,D03,HR Coordinator,FULL_TIME,NON_EXEMPT,2014-01-04,,,TX,,26.08,2025-06-30 02:00:00 UTC
+E1158,Patricia,Moore,patricia.moore58@example.org,D07,Driver,FULL_TIME,NON_EXEMPT,2020-09-10,,,NM,,19.25,2025-06-30 02:00:00 UTC
+E1172,Tyler,Stewart,tyler.stewart72@example.org,D08,Systems Administrator,FULL_TIME,EXEMPT,2015-12-18,,,TX,83900.0,,2025-06-30 02:00:00 UTC
+E1189,Victor,Parker,victor.parker89@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2026-03-29,,,OK,,26.63,2026-03-29 02:00:00 UTC
+E1012,Lucia,White,LUCIA.WHITE12@EXAMPLE.ORG,D01,Payroll Specialist,FULL_TIME,NON_EXEMPT,2016-11-13,,,NM,,28.22,2025-10-15 02:00:00 UTC
+E1117,Victor,White,victor.white17@example.org,D06,Grants Manager,FULL_TIME,EXEMPT,2024-08-29,,,TX,77800.0,,2025-06-30 02:00:00 UTC
+E1047,Eric,Edwards,eric.edwards47@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2016-08-22,,,TX,56000.0,,2025-06-30 02:00:00 UTC
+E1024,Daniel,Baker,daniel.baker24@example.org,D03,Recruiter,FULL_TIME,EXEMPT,2018-03-16,,,TX,70400.0,,2025-06-30 02:00:00 UTC
+E1017,Aaron,Lewis,aaron.lewis17@example.org,D02,Senior Accountant,FULL_TIME,EXEMPT,2017-01-21,,,LA,78600.0,,2025-06-30 02:00:00 UTC
+E1061,Omar,Hall,omar.hall61@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2021-07-15,2026-03-12,VOLUNTARY,TX,,20.27,2025-06-30 02:00:00 UTC
+E1170,Laura,Hill,laura.hill70@example.org,D08,Help Desk Technician,FULL_TIME,NON_EXEMPT,2022-08-29,2026-03-16,INVOLUNTARY,TX,,23.98,2025-06-30 02:00:00 UTC
+E1065,Rosa,Davis,rosa.davis65@example.org,D07,Intake Specialist,FULL_TIME,NON_EXEMPT,2024-08-15,,,TX,,23.86,2026-05-09 02:00:00 UTC
+E1043,Paula,Garcia,paula.garcia43@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2025-01-02,,,OK,,24.39,2025-06-30 02:00:00 UTC
+E1042,Kevin,Nelson,kevin.nelson42@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2022-06-23,,,TX,,23.4,2025-06-30 02:00:00 UTC
+E1157,Erin,Evans,erin.evans57@example.org,D07,Receptionist,FULL_TIME,NON_EXEMPT,2014-12-26,2026-02-04,RETIREMENT,TX,,19.82,2025-06-30 02:00:00 UTC
+E1136,Lucia,Nelson,lucia.nelson36@example.org,D07,Maintenance Technician,FULL_TIME,NON_EXEMPT,2023-07-14,2025-09-06,INVOLUNTARY,TX,,24.15,2025-06-30 02:00:00 UTC
+E1021,Chloe,Davis,chloe.davis21@example.org,D03,Recruiter,FULL_TIME,EXEMPT,2014-03-24,,,OK,60400.0,,2025-06-30 02:00:00 UTC
+E1040,Maria,Davis,maria.davis40@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2015-10-28,,,TX,,26.85,2025-06-30 02:00:00 UTC
+E1213,Emily,Lopez,emily.lopez13@example.org,D06,Grants Manager,FULL_TIME,EXEMPT,2025-12-25,,,OK,86700.0,,2025-12-25 02:00:00 UTC
+E1155,Andre,Roberts,andre.roberts55@example.org,D07,Maintenance Technician,FULL_TIME,NON_EXEMPT,2020-06-30,,,TX,,28.91,2025-06-30 02:00:00 UTC
+E1161,Samuel,Campbell,samuel.campbell61@example.org,D08,Data Analyst,FULL_TIME,EXEMPT,2018-04-12,2025-12-31,VOLUNTARY,TX,79500.0,,2025-06-30 02:00:00 UTC
+E1105,Robert,Lopez,robert.lopez5@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2018-05-01,,,TX,,30.29,2025-06-30 02:00:00 UTC
+E1055,Brian,Evans,brian.evans55@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2021-01-30,,,AR,,26.5,2025-06-30 02:00:00 UTC
+E1148,Paula,Clark,paula.clark48@example.org,D07,Receptionist,FULL_TIME,NON_EXEMPT,2019-06-15,,,TX,,21.24,2025-06-30 02:00:00 UTC
+E1020,Nina,Evans,nina.evans20@example.org,D03,HR Coordinator,FULL_TIME,NON_EXEMPT,2019-08-22,,,AR,,22.86,2025-06-30 02:00:00 UTC
+E1059,Rosa,Carter,rosa.carter59@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2023-06-25,,,TX,,23.64,2025-06-30 02:00:00 UTC
+E1052,Daniel,Scott,daniel.scott52@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2017-09-05,2026-01-08,VOLUNTARY,OK,,25.92,2025-06-30 02:00:00 UTC
+E1025,Laura,Carter,laura.carter25@example.org,D03,HR Coordinator,FULL_TIME,NON_EXEMPT,2020-05-12,2025-08-06,RETIREMENT,TX,,23.9,2025-06-30 02:00:00 UTC
+E1217,Paula,Mitchell,paula.mitchell17@example.org,D06,Events Coordinator,CONTRACTOR,,2025-07-13,,,TX,,77.36,2025-07-13 02:00:00 UTC
+E1102,Andre,Young,andre.young2@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2017-05-24,,,TX,,20.68,2025-06-30 02:00:00 UTC
+E1110,Daniel,Harris,daniel.harris10@example.org,D05,Counselor Associate,PART_TIME,NON_EXEMPT,2016-12-04,,,TX,,28.84,2025-06-30 02:00:00 UTC
+E1149,Rosa,Garcia,rosa.garcia49@example.org,D07,Maintenance Technician,FULL_TIME,NON_EXEMPT,2017-07-23,,,TX,,28.15,2025-06-30 02:00:00 UTC
+E1100,Paula,Scott,paula.scott0@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2019-12-25,,,AR,74500.0,,2025-06-30 02:00:00 UTC
+E1139,Olivia,Smith,olivia.smith39@example.org,D07,Receptionist,FULL_TIME,NON_EXEMPT,2022-06-12,,,AR,,17.6,2025-06-30 02:00:00 UTC
+E1066,Marcus,Anderson,marcus.anderson66@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2023-11-03,,,TX,,23.44,2025-06-30 02:00:00 UTC
+E1153,Eric,White,eric.white53@example.org,D07,Maintenance Technician,PART_TIME,NON_EXEMPT,2023-02-07,,,LA,,24.88,2025-06-30 02:00:00 UTC
+E1180,Lucia,Thomas,lucia.thomas80@example.org,D07,Receptionist,FULL_TIME,NON_EXEMPT,2026-09-11,,,OK,,19.13,2026-09-11 02:00:00 UTC
+E1119,Rosa,Lopez,rosa.lopez19@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2021-02-13,,,TX,73300.0,,2025-06-30 02:00:00 UTC
+E1145,Omar,Evans,omar.evans45@example.org,D07,Driver,FULL_TIME,NON_EXEMPT,2024-09-12,,,AR,,18.74,2025-06-30 02:00:00 UTC
+E1005,Andre,Davis,andre.davis5@example.org,D01,Executive Assistant,PART_TIME,NON_EXEMPT,2016-11-29,,,NM,,33.5,2025-06-30 02:00:00 UTC
+E1050,Jennifer,Lopez,jennifer.lopez50@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2015-01-16,,,OK,56700.0,,2025-06-30 02:00:00 UTC
+E1023,Carlos,Evans,carlos.evans23@example.org,D03,Recruiter,FULL_TIME,EXEMPT,2016-04-26,,,TX,61900.0,,2025-06-30 02:00:00 UTC
+E1115,Omar,Adams,omar.adams15@example.org,D05,Counselor Associate,PART_TIME,NON_EXEMPT,2024-05-14,,,TX,,26.68,2025-06-30 02:00:00 UTC
+E1192,Megan,Mitchell,megan.mitchell92@example.org,D07,Driver,FULL_TIME,NON_EXEMPT,2025-10-18,,,TX,,19.69,2025-10-18 02:00:00 UTC
+E1118,Patricia,Edwards,patricia.edwards18@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2019-06-28,,,TX,59700.0,,2025-06-30 02:00:00 UTC
+E1034,Grace,Garcia,grace.garcia34@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2018-01-30,2026-02-22,VOLUNTARY,OK,55900.0,,2025-06-30 02:00:00 UTC
+E1051,Rosa,Mitchell,rosa.mitchell51@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2019-11-11,,,CO,,23.64,2025-06-30 02:00:00 UTC
+E1187,Kevin,Carter,kevin.carter87@example.org,D07,Receptionist,FULL_TIME,NON_EXEMPT,2026-03-02,,,CO,,18.17,2026-03-02 02:00:00 UTC
+TEST-001,Test,User1,payroll.test1@example.org,D02,Test Account,FULL_TIME,EXEMPT,2025-01-01,,,TX,52000.0,,2025-06-30 02:00:00 UTC
+E1010,Tara,Brown,tara.brown10@example.org,D01,Senior Accountant,FULL_TIME,EXEMPT,2021-07-24,,,AR,84600.0,,2026-05-25 02:00:00 UTC
+E1003,Brian,Carter,brian.carter3@example.org,D01,Executive Assistant,FULL_TIME,NON_EXEMPT,2014-12-01,,,TX,,34.0,2025-06-30 02:00:00 UTC
+E1188,Kevin,King,kevin.king88@example.org,D03,HR Coordinator,FULL_TIME,NON_EXEMPT,2025-09-22,,,CO,,26.73,2025-09-22 02:00:00 UTC
+E1090,Patricia,Thomas,patricia.thomas90@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2019-01-18,,,AR,76100.0,,2025-06-30 02:00:00 UTC
+E1198,Michael,Stewart,michael.stewart98@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2026-04-14,,,OK,,20.37,2026-04-14 02:00:00 UTC
+E1094,Julia,Stewart,julia.stewart94@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2020-02-09,,,TX,73500.0,,2025-06-30 02:00:00 UTC
+E1104,Lucia,Hall,lucia.hall4@example.org,D05,Clinical Assistant,PART_TIME,NON_EXEMPT,2016-05-21,,,TX,,22.26,2025-06-30 02:00:00 UTC
+E1113,Maria,Wilson,maria.wilson13@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2017-12-26,,,TX,65300.0,,2025-06-30 02:00:00 UTC
+E1130,Carlos,Martinez,carlos.martinez30@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2023-07-03,,,NM,75100.0,,2025-06-30 02:00:00 UTC
+E1182,Hannah,Adams,hannah.adams82@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2026-01-29,,,TX,65900.0,,2026-01-29 02:00:00 UTC
+E1010,Tara,Brown,tara.brown10@example.org,D02,Senior Accountant,FULL_TIME,EXEMPT,2021-07-24,,,AR,84600.0,,2025-06-30 02:00:00 UTC
+E1124,Michael,Scott,michael.scott24@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2023-09-19,,,TX,68800.0,,2025-06-30 02:00:00 UTC
+E1190,David,Evans,david.evans90@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2026-02-24,,,TX,,20.33,2026-02-24 02:00:00 UTC
+E1183,Ana,Torres,ana.torres83@example.org,D04,Family Advocate,PART_TIME,NON_EXEMPT,2025-12-21,,,OK,,24.82,2025-12-21 02:00:00 UTC
+E1211,David,Adams,david.adams11@example.org,D05,Clinical Assistant,FULL_TIME,NON_EXEMPT,2026-07-04,,,TX,,22.18,2026-07-04 02:00:00 UTC
+E1026,Daniel,Jackson,daniel.jackson26@example.org,D03,Recruiter,FULL_TIME,EXEMPT,2017-07-28,2025-11-17,INVOLUNTARY,TX,70300.0,,2025-06-30 02:00:00 UTC
+E1018,Jason,Anderson,jason.anderson18@example.org,D02,AP Clerk,FULL_TIME,NON_EXEMPT,2024-03-14,,,TX,,23.66,2025-06-30 02:00:00 UTC
+E1181,Eric,Lopez,eric.lopez81@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2026-03-13,,,CO,,20.82,2026-03-13 02:00:00 UTC
+E1116,Linda,Ramirez,linda.ramirez16@example.org,D06,Development Director,FULL_TIME,EXEMPT,2022-11-15,,,TX,123100.0,,2025-06-30 02:00:00 UTC
+E1011,Samuel,Anderson,samuel.anderson11@example.org,D02,Senior Accountant,FULL_TIME,EXEMPT,2015-05-23,,,CO,90300.0,,2025-06-30 02:00:00 UTC
+E1125,Tyler,Davis,tyler.davis25@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2014-04-23,,,TX,71300.0,,2025-06-30 02:00:00 UTC
+E1186,James,Lewis,james.lewis86@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2026-10-24,,,TX,,20.74,2026-10-24 02:00:00 UTC
+E1150,Carlos,Mitchell,carlos.mitchell50@example.org,D07,Driver,PART_TIME,NON_EXEMPT,2024-12-30,2025-09-26,RETIREMENT,TX,,22.38,2025-06-30 02:00:00 UTC
+E1045,Emily,Harris,emily.harris45@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2022-04-21,,,TX,,21.1,2025-06-30 02:00:00 UTC
+E1111,Diego,Campbell,diego.campbell11@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2024-05-30,,,TX,70700.0,,2025-06-30 02:00:00 UTC
+E1041,Jason,Torres,jason.torres41@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2019-09-02,,,CO,,21.83,2025-06-30 02:00:00 UTC
+E1027,David,Johnson,david.johnson27@example.org,D03,Recruiter,FULL_TIME,EXEMPT,2024-02-29,,,TX,59500.0,,2025-06-30 02:00:00 UTC
+E1206,David,Phillips,david.phillips6@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2026-04-14,,,TX,59000.0,,2026-04-14 02:00:00 UTC
+E1065,Rosa,Davis,rosa.davis65@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2024-08-15,,,TX,,23.86,2025-06-30 02:00:00 UTC
+E1004,Kevin,Carter,kevin.carter4@example.org,D01,Chief Operating Officer,FULL_TIME,EXEMPT,2019-09-27,,,TX,213500.0,,2025-06-30 02:00:00 UTC
+E1088,Marcus,Wright,marcus.wright88@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2019-06-05,,,AR,,30.75,2025-06-30 02:00:00 UTC
+E1060,James,Wilson,james.wilson60@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2021-06-08,,,TX,56700.0,,2025-06-30 02:00:00 UTC
+E1028,David,Hall,david.hall28@example.org,D04,Program Director,FULL_TIME,EXEMPT,2013-12-29,,,TX,101400.0,,2025-06-30 02:00:00 UTC
+E1208,Emily,Green,emily.green8@example.org,D04,Intake Specialist,FULL_TIME,NON_EXEMPT,2025-12-10,,,TX,,23.99,2025-12-10 02:00:00 UTC
+E1066,Marcus,Anderson,MARCUS.ANDERSON66@EXAMPLE.ORG,D03,Family Advocate,FULL_TIME,NON_EXEMPT,2023-11-03,,,TX,,23.44,2026-01-15 02:00:00 UTC
+E1179,Luis,Walker,luis.walker79@example.org,D07,Driver,FULL_TIME,NON_EXEMPT,2025-08-22,,,TX,,22.27,2025-08-22 02:00:00 UTC
+E1091,Megan,Garcia,MEGAN.GARCIA91@EXAMPLE.ORG,D06,Licensed Counselor,FULL_TIME,EXEMPT,2021-01-19,,,TX,78800.0,,2026-01-02 02:00:00 UTC
+E1137,Hannah,Green,hannah.green37@example.org,D07,Receptionist,FULL_TIME,NON_EXEMPT,2018-04-20,2026-08-26,VOLUNTARY,TX,,17.75,2025-06-30 02:00:00 UTC
+E1099,Diego,Lopez,diego.lopez99@example.org,D05,Licensed Counselor,FULL_TIME,EXEMPT,2025-01-11,,,AR,68900.0,,2025-06-30 02:00:00 UTC
+E1030,Diego,Moore,diego.moore30@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2016-04-05,,,TX,,25.17,2025-06-30 02:00:00 UTC
+E1084,Patricia,King,patricia.king84@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2015-03-20,,,TX,,31.11,2025-06-30 02:00:00 UTC
+E1055,Brian,Evans,brian.evans55@example.org,D06,Family Advocate,FULL_TIME,NON_EXEMPT,2021-01-30,,,AR,,26.5,2025-10-24 02:00:00 UTC
+E1089,Sofia,Smith,sofia.smith89@example.org,D05,Counselor Associate,FULL_TIME,NON_EXEMPT,2020-12-08,,,AR,,27.44,2025-06-30 02:00:00 UTC
+E1107,Robert,Nelson,robert.nelson7@example.org,D05,Counselor Associate,PART_TIME,NON_EXEMPT,2020-07-24,,,TX,,26.51,2025-06-30 02:00:00 UTC
+E1127,Emily,Anderson,emily.anderson27@example.org,D06,Donor Relations Officer,FULL_TIME,EXEMPT,2024-06-09,,,TX,74800.0,,2025-06-30 02:00:00 UTC
+E1131,Sofia,Martinez,sofia.martinez31@example.org,D06,Grants Manager,FULL_TIME,EXEMPT,2020-04-10,,,TX,72100.0,,2025-06-30 02:00:00 UTC
+E1185,Daniel,Moore,daniel.moore85@example.org,D04,Case Manager,FULL_TIME,EXEMPT,2026-06-02,,,AR,53100.0,,2026-06-02 02:00:00 UTC
+E1044,Emily,Anderson,emily.anderson44@example.org,D04,Family Advocate,FULL_TIME,NON_EXEMPT,2025-03-21,,,TX,,27.47,2025-06-30 02:00:00 UTC

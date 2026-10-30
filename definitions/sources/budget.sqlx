@@ -1,0 +1,6 @@
+config {
+  type: "declaration",
+  schema: "payroll_raw",
+  name: "budget",
+  description: "Bronze: budget.csv as loaded from the payroll system. All columns are STRING."
+}

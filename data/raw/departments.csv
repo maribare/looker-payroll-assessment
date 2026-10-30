@@ -1,0 +1,9 @@
+department_id,department_name,division,cost_center,manager_employee_id
+D01,Executive Office,Administration,CC-100,E1001
+D02,Finance,Administration,CC-110,E1007
+D03,Human Resources,Administration,CC-120,E1019
+D04,Family Services,Programs,CC-200,E1028
+D05,Counseling Services,Programs,CC-210,E1076
+D06,Development & Fundraising,Advancement,CC-300,E1116
+D07,Facilities & Operations,Operations,CC-400,E1134
+D08,Information Technology,Operations,CC-410,E1160
